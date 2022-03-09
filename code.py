@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
+import datetime
 import pywhatkit
 import pyjokes
 import wikipedia
@@ -9,18 +10,28 @@ from email.mime import audio
 from numpy import place
 from setuptools import Command
 
-
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-
 def talk(text):
     engine.say(text)
     engine.runAndWait()
 
+def wishMe():
+    hour = int(datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("Good Morning!")
 
+    elif hour>=12 and hour<18:
+        speak("Good Afternoon!")   
+
+    else:
+        speak("Good Evening!")  
+
+    speak("I am Jarvis Sir. Please tell me how may I help you")      
+    
 hi = 0
 
 if hi == 0:
@@ -61,10 +72,10 @@ print("Loading your AI personal Assistant kavi")
 talk("Loading your AI personal Assistant kavi")
 
 if __name__ == '__main__':
-
+    wishMe()
     while True:
-        talk("Tell me Sir! How can I help you?")
-        print("Tell me Sir! How can I help you?")
+        talk("Please Tell me Sir!)
+        print("Please Tell me Sir!")
         command = take_command().lower()
 
         if "exit" in command or "stop" in command or "shutdown" in command:
