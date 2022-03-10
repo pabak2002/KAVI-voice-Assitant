@@ -78,7 +78,7 @@ if __name__ == '__main__':
         print("Please Tell me Sir!")
         command = take_command().lower()
 
-        if "exit" in command or "stop" in command or "shutdown" in command:
+        if "exit" in command or "stop" in command or "shutdown" in command or "bye" in command:
             talk("Your AI assistant kavi is shutting down,Good bye Sir and have a good day (:")
             print("Your AI assistant kavi is shutting down,Good bye Sir and have a good day (:")
             break
@@ -101,7 +101,9 @@ if __name__ == '__main__':
             source = wikipedia.summary(person, 100)
             print(source)
             talk(source)
-
+             
+        elif 'open google' in query:
+            webbrowser.open("google.com")
 
         elif 'search' in command:
             info = command.replace('search', '')
