@@ -30,12 +30,12 @@ def wishMe():
     else:
         speak("Good Evening!")  
 
-    speak("I am Jarvis Sir. Please tell me how may I help you")      
+    speak("I am Kavi Sir. Please tell me how may I help you")      
     
 hi = 0
 
 if hi == 0:
-    talk('hello iam kkavi')
+    talk('hello iam kavi')
     print('hello iam kavi Voice assistant')
     talk('How are you buddy!!!')
     print('How are you buddy!!!')
